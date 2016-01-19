@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Timesheet</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="css/styles.css" rel="stylesheet" type="text/css">
+
+		<script src="//code.angularjs.org/1.4.8/angular.min.js"></script>
+		<script src="//code.angularjs.org/1.4.8/angular-animate.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/Services/dataService.js"></script>
+		<script src="js/ModifyPresence/ModifyPresence.js"></script>
+		<script src="js/TimesheetPage/timesheetController.js"></script>
+		<script src="js/Timesheet/timesheet.js"></script>
+		<script src="js/Presence/presenceTypes.js"></script>
+		<script src="js/Presence/presence.js"></script>
+		
+	</head>
+
+
+	<body>
+
+
+		<div id="app">
+
+			<header>
+				Timesheets
+
+				<div id="user">
+					<img src="https://s3.amazonaws.com/uifaces/faces/twitter/9lessons/128.jpg" />
+					<span>Sanu Menon</span>
+				</div>
+
+			</header>
+
+			<!-- <div id="tabContainer">
+				<div class="view-tab active-tab">Timesheet</div>
+				<div class="view-tab">Summary</div>
+			</div> -->
+
+
+			<div id="content">
+
+				<ng-include src="'js/timesheetPage/timesheetPage.html'"></ng-include>
+
+			</div>
+
+
+		</div>
+
+
+	</body>
+
+
+</html>

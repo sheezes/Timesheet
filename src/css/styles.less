@@ -1,0 +1,403 @@
+@green: #46B86B;
+@white: #fff;
+@gray: #DFDFDF;
+@texColor: #242424;
+
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	background: #fafafa;	
+	font-size: 1.2em;
+    color: @texColor;
+}
+
+* {
+	outline: none;
+}
+
+.button {
+	display: inline-block;
+	border-radius: 3px;
+    background: @green;
+    border: 0;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    color: #fff;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    i {
+    	margin-right: 5px;
+    }
+
+    &:hover {
+    	background: darken(@green, 5%);
+    }
+
+    &:active {
+    	background: darken(@green, 10%);
+    }
+}
+
+
+#app {
+	margin: 30px auto;
+    max-width: 1200px;
+    background: @white;
+    overflow: hidden;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.05);
+    border: 1px solid @gray;
+    padding: 0;
+}
+
+header {
+	padding: 15px 20px;
+    margin-bottom: 15px;
+    background: @green;
+    color: @white;
+    text-align: center;
+    position: relative;
+}
+
+#user {
+
+	float: right;
+	font-size: 0.8em;
+    position: absolute;
+	right: 20px;
+    top: 12px;
+
+	img {
+		border-radius: 50%;
+		width: 32px;
+		height: 32px;
+		float: left;
+	}
+
+	span {
+		margin: 5px 0 0 10px;
+    	display: inline-block;
+	}
+}
+
+#tabContainer {
+	text-align: center;
+	overflow: hidden;
+	margin: 0 20px;
+}
+
+.view-tab {
+	width: 50%;
+    float: left;
+    padding: 10px 0;
+    border-bottom: 2px solid #eee;
+    color: @gray;
+    cursor: pointer;
+}
+
+.active-tab {
+	border-bottom: 2px solid @green;
+	color: @green;
+	cursor: default;
+}
+
+
+
+#content {
+
+	margin: 25px 20px;
+
+	
+	select {
+	    border: none;
+	    font-size: 1em;
+	    color: @green;
+	    background: @white;
+	    -webkit-appearance: initial;
+	    border-bottom: 1px dashed @green;
+	    border-radius: 0;
+	    padding: 0 5px 6px 5px;
+	    cursor: pointer;
+	}
+}
+
+.button-add {
+	float: right;
+	position: relative;
+	margin-top: -1px;
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid @green !important;
+    color: @green !important;
+    background: @white !important;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    &:hover {
+    	background: darken(@white,3%) !important;
+    }
+
+    &:active {
+    	background: @green !important;
+    	color: @white !important;
+    }
+}
+
+#timesheetTable {
+
+	margin-top: 20px;
+	width: 100%;
+
+	th {
+		color: #A2A2A2;
+		padding: 10px 0;
+		text-align: left;
+		font-weight: 400;
+		border-bottom: 1px solid @gray;
+	}
+
+	tr{
+
+		&:hover {
+
+			.table-edit i {
+				visibility: visible;
+			}	
+
+			td {
+				background: #f6f6f6;
+
+			}
+			
+		}
+	}
+
+	td {
+		padding: 10px 0;
+		vertical-align: top;
+	}
+}
+
+.table-edit {
+	width: 40px;
+	text-align: center;
+
+	i {
+		position: relative;
+		margin-top: 4px;
+		font-size: 0.95em;
+		visibility: hidden;
+
+		&:hover {
+			color: @green;
+			cursor: pointer;
+		};
+	}
+}
+
+.table-date {
+	width: 7%;
+}
+
+.table-day {
+	width: 11%;
+}
+
+.table-hours {
+	width: 14%;
+}
+
+.table-type {
+	width: 15%;
+}
+
+.table-comment {
+	width: calc(~'43%; - 60px');
+    padding-right: 20px !important;
+}
+
+.table-total {
+	width: 10%;
+}
+
+
+
+#selectTimesheetMsg {
+    text-align: center;
+    font-size: 1.4em;
+    padding: 80px 0;
+    color: @gray;
+
+    i {
+    	font-size: 3em;
+    	display: block;
+    	margin-bottom: 25px;
+    }
+}
+
+
+
+/********************* MODAL *********************/
+
+.modal {
+	background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    select,
+    input,
+    textarea {
+    	border: 1px solid @gray;
+	    background: none;
+	    -webkit-appearance: none;
+	    font-size: 0.8em;
+	    padding: 5px 10px;
+	    border-radius: 4px;
+	    margin-top: 8px;
+	    position: relative;
+	    z-index: 1010;
+
+	    &:focus {
+	    	border-color: @green;
+    	    box-shadow: 0 0 5px rgba(33, 134, 66, 0.31);
+	    }
+    }
+
+    .select-wrapper-arrow {
+
+    	&:after {
+    		content: "\f107";
+    		display: inline-block;
+		    font: normal normal normal 14px/1 FontAwesome;
+		    font-size: inherit;
+		    text-rendering: auto;
+		    -webkit-font-smoothing: antialiased;
+		    -moz-osx-font-smoothing: grayscale;
+		    position: absolute;
+		    font-size: 0.8em;
+		    margin-left: -24px;
+		    margin-top: 16px;
+		    z-index: 1000;
+    	}
+    }
+
+    .presence-time {
+		width: 140px
+    }
+
+    .presence-day {
+    	width: 70px;
+    }
+
+    .presence-type {
+    	width: 360px;
+    }
+
+    .presence-comment {
+    	width: 100%;
+    	height: 80px;
+    }
+}
+
+.modal-day-label {
+    display: inline-block;
+    width: 70px;
+}
+
+.modal-entrance-label,
+.modal-leave-label {
+    display: inline-block;
+    width: 140px;
+}
+
+
+.modal-body {
+	background: @white;
+	max-width: 600px;
+    margin: 60px auto;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+  	animation: modal-in-animation 0.6s cubic-bezier(0.38, 0.55, 0.265, 1.5);
+}
+
+@keyframes modal-in-animation {
+    from {
+	    transform: translateY(-550px);
+    }
+    to {
+	    transform: translateY(0px);
+    }
+}
+
+.modal-out {
+	animation: modal-out-animation 0.4s cubic-bezier(0.38, 0.55, 0.265, 1.5) !important;
+}
+
+@keyframes modal-out-animation {
+    from {
+	    transform: translateY(0px);
+    }
+    to {
+	    transform: translateY(-500px);
+    }
+}
+
+.modal-title {
+    padding: 15px 10px;
+    background: @gray;
+    text-align: center;
+    position: relative;
+
+    i {
+	    position: absolute;
+	    right: 15px;
+	    top: 17px;
+	    cursor: pointer;
+	    font-size: 1.1em;
+	    color: #909090;
+
+	    &:hover {
+	    	color: darken(#909090,5%);
+	    }
+
+	    &:active {
+	    	color: darken(#909090,10%);
+	    }
+    }
+}
+
+.modal-content {
+	padding: 35px 20px;
+}
+
+.modal-error {
+	text-align: center;
+    background: #F95353;
+    color: @white;
+    padding: 10px 5px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    border-radius: 4px;
+}
+
+.modal-actions {
+	padding: 10px 20px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+.input-error {
+    border-color: #F95353 !important;
+    box-shadow: 0 0 5px rgb(245, 160, 160) !important;
+    color: #F95353 !important;
+}

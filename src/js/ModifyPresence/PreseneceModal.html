@@ -1,0 +1,50 @@
+<div id="timesheetModal" class="modal">
+
+	<div class="modal-body" id="modalBody">
+
+		<div class="modal-title">
+			<span ng-show="presenceData">Edit {{presenceData.startDate.getDate()}}/</span>{{ timesheet.month+1 }}/{{ timesheet.year }} 
+			<span ng-show="!presenceData"> - Add Presence</span>
+			<i class="fa fa-times" ng-click="modal.exit()"></i>
+		</div>
+
+		<div class="modal-content">
+
+			<div class="modal-error" ng-show="modal.errorMessage">
+				{{ modal.errorMessage }}
+			</div>
+
+			<div>
+				<span class="modal-day-label">Day</span>
+				<span class="modal-entrance-label">Entrance</span>
+				<span class="modal-leave-label">Leave</span>
+			</div>
+			<span class="select-wrapper-arrow">
+				<select ng-disabled="presenceData" class="presence-day" ng-model="modal.day"
+				ng-options="day for day in modal.daysInMonth"></select>
+			</span>
+			<input type="text" class="presence-time" ng-model="modal.entrance" ng-click="modal.validEntrance = true; modal.errorMessage = ''" ng-class="{'input-error' : !modal.validEntrance}" placeholder="e.g: 8:00" />
+
+			<input type="text" class="presence-time" ng-model="modal.leaving" ng-click="modal.validLeaving = true; modal.errorMessage = ''" ng-class="{'input-error' : !modal.validLeaving}" placeholder="e.g: 17:00" />
+			<br/><br/>
+			
+			Type<br/>
+			<span class="select-wrapper-arrow">
+				<select class="presence-type" ng-model="modal.type"
+				ng-options="type for type in modal.presenceTypes"></select>
+			</span>
+			<br/><br/>
+
+			Comment<br/>
+			<textarea class="presence-comment" placeholder="Enter a comment" ng-model="modal.comment"></textarea>
+
+		</div>
+
+
+		<div class="modal-actions">
+			<div class="button" ng-click="modal.savePresence()"><i class="fa fa-save"></i> Save</div>
+		</div>
+
+	</div>
+
+</div>

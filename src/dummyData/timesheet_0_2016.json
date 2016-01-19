@@ -1,0 +1,55 @@
+{
+"month": 0,
+"year": 2016,
+"presence": [
+{
+"id": 1,
+"startDate": "2016-01-17T07:21:00.000Z",
+"endDate": "2016-01-17T15:17:20.000Z",
+"type": "Normal",
+"comment": null
+},
+{
+"id": 2,
+"startDate": "2016-01-18T06:12:00.000Z",
+"endDate": "2016-01-18T17:14:00.000Z",
+"type": "Normal",
+"comment": null
+},
+{
+"id": 3,
+"startDate": "2016-01-19T05:00:00.000Z",
+"endDate": "2016-01-19T15:00:00.000Z",
+"type": "Normal",
+"comment": null
+},
+{
+"id": 4,
+"startDate": "2016-01-20T18:01:00.000Z",
+"endDate": "2016-01-21T05:52:00.000Z",
+"type": "Normal",
+"comment": null
+},
+{
+"id": 5,
+"startDate": "2016-01-21T06:00:00.000Z",
+"endDate": "2016-01-21T15:00:00.000Z",
+"type": "Normal",
+"comment": null
+},
+{
+"id": 6,
+"startDate": "2016-01-22T06:00:00.000Z",
+"endDate": "2016-01-22T15:00:00.000Z",
+"type": "Normal",
+"comment": null
+},
+{
+"id": 7,
+"startDate": "2016-01-23T06:00:00.000Z",
+"endDate": "2016-01-23T15:00:00.000Z",
+"type": "Offsite",
+"comment": null
+}
+]
+}

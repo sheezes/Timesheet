@@ -1,0 +1,19 @@
+<div ng-controller="timesheetPageController as tsPageCtrl">
+	
+	<div>
+		Showing timesheet for
+
+		<select ng-change="tsPageCtrl.getMonthlyData(tsPageCtrl.selectedMonth.month,tsPageCtrl.selectedMonth.year)" 
+			ng-model="tsPageCtrl.selectedMonth" 
+			ng-options="tsPageCtrl.setMonthLabel(timesheet.month, timesheet.year) 
+			for timesheet in tsPageCtrl.availableTimesheets">
+			 <option value="" selected disabled>Choose month</option>
+		</select>
+
+		<div class="button button-add" ng-show="tsPageCtrl.selectedMonth" modify-presence timesheet="tsPageCtrl.monthlyData">
+			<i class="fa fa-calendar-plus-o"></i> Add Presence
+		</div>
+	</div>
+
+	<timesheet data="tsPageCtrl.monthlyData"></timesheet>
+</div>

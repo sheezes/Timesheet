@@ -1,0 +1,28 @@
+<table id="timesheetTable" cellspacing="0" ng-show="data">
+	<thead>
+		<tr>
+			<th class="table-edit"></th>
+			<th class="table-date">Date</th>
+			<th class="table-day">Day</th>
+			<th class="table-hours">Hours</th>
+			<th class="table-type">Type</th>
+			<th class="table-comment">Comment</th>
+			<th class="table-total">Total</th>
+		</tr>
+	</thead>
+
+	<tbody>
+
+		<tr ng-repeat="day in data.presence | orderBy:'startDate' track by day.id" presence="day"></tr>
+
+
+	</tbody>
+</table>
+
+
+<div id="selectTimesheetMsg" ng-hide="data">
+
+	<i class="fa fa-calendar"></i>
+	Please select a month to show
+
+</div>

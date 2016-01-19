@@ -1,0 +1,7 @@
+<td class="table-edit"><i class="fa fa-edit" modify-presence timesheet="$parent.data" presence-data="data"></i></td>
+<td class="table-date">{{ data.startDate | date:'d.M'}}</td>
+<td class="table-day">{{ data.startDate | date:'EEEE'}}</td>
+<td class="table-hours">{{ data.startDate | date:'HH:mm'}} - {{ data.endDate | date:'HH:mm'}}</td>
+<td class="table-type">{{data.type}}</td>
+<td class="table-comment">{{data.comment}}</td>
+<td class="table-total ">{{ presence.hourSum(data.endDate, data.startDate)}}</td>
